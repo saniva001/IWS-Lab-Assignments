@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <Style>
+   body{background-color:MediumSeaGreen}
+   header{
+    padding: 1em;
+    color: white;
+    background-color:black;
+    clear: left;
+    text-align: center;
+  }
+  </Style>
+</head>
+<body>
+  <header><h1>Finding Area of Shapes</h1></header><br>
+  <button type="button" onclick=Circle()>Circle</button>
+  <button type="button" onclick=Triangle()>Triangle</button>
+  <button type="button" onclick=Rectangle()>Rectangle</button>
+  <button type="button" onclick=Square()>Square</button>
+  <button type="button" onclick=Hexagon()>Hexagon</button>
+  <br><br>
+  <canvas id="myCanvas" width="400" height="300" style="border:2px dotted gray;">Your Browser doesn't support Canvas</canvas>
+  <br>
+  <p id='temp'></p>
+  <script>
+  function Circle() {
+  var c = document.getElementById("myCanvas");
+  var ctx = c.getContext("2d");
+  ctx.clearRect(0,0,c.width,c.height);
+  ctx.beginPath();
+  ctx.arc(150, 100, 75, 0, 2 * Math.PI);
+  ctx.stroke();
+  var d=document.getElementById('temp');
+  d.innerHTML="Radius:<input type='text' id='radius' placeholder='2'/><br><button type='button' onclick=area_C()>Calculate</button><br><p id='result'></p>";
+  }
+  function area_C()
+  {
+      var area = 2 * Math.PI * parseInt(document.getElementById('radius').value);
+      var text = "Area: " + area;
+      document.getElementById('result').innerHTML = text;
+  }
+  function Triangle() {
+  var c = document.getElementById("myCanvas");
+  var ctx = c.getContext("2d");
+  ctx.clearRect(0,0,c.width,c.height);
+  ctx.beginPath();
+  ctx.moveTo(150, 25);
+  ctx.lineTo(75, 175);
+  ctx.lineTo(225, 175);
+  ctx.lineTo(150,25);
+  ctx.stroke();
+  var d = document.getElementById('temp');
+  d.innerHTML="Side1:<input type='text' id='s1' placeholder='3'/><br>Side2:<input type='text' id='s2' placeholder='4'/><br>Side3:<input type='text' id='s3' placeholder='5'/><br><button type='button' onclick=area_T()>Calculate</button><br><p id='result'></p>"
+  }
+  function area_T()
+  {
+      var x = parseInt(document.getElementById('s1').value);
+      var y = parseInt(document.getElementById('s2').value);
+      var z = parseInt(document.getElementById('s3').value);
+      var p = (x+y+z)/2;
+      var e = p*(p-x)*(p-y)*(p-z);
+      var area = Math.sqrt(e);
+      var text = "Area: "+area;
+      document.getElementById('result').innerHTML = text;
+  }
+  function Rectangle() {
+  var c = document.getElementById("myCanvas");
+  var ctx = c.getContext("2d");
+  ctx.clearRect(0,0,c.width,c.height);
+  ctx.strokeRect(30,30,200,150);
+  var d = document.getElementById('temp');
+  d.innerHTML="Length:<input type='text' id='len' placeholder='3'/><br>Breadth:<input type='text' id='brd' placeholder='4'/><br><button type='button' onclick=area_R()>Calculate</button><br><p id='result'></p>"
+  }
+  function area_R()
+  {
+      var l = parseInt(document.getElementById('len').value);
+      var b = parseInt(document.getElementById('brd').value);
+      var area = l*b;
+      var text = "Area: "+area;
+      document.getElementById('result').innerHTML = text;
+  }
+  function Square() {
+  var c = document.getElementById("myCanvas");
+  var ctx = c.getContext("2d");
+  ctx.clearRect(0,0,c.width,c.height);
+  ctx.beginPath();
+  ctx.moveTo(75, 25);
+  ctx.lineTo(75, 175);
+  ctx.lineTo(225, 175);
+  ctx.lineTo(225, 25);
+  ctx.lineTo(75, 25);
+  ctx.stroke();
+  var d = document.getElementById('temp');
+  d.innerHTML="Side:<input type='text' id='side' placeholder='3'/><br><button type='button' onclick=area_S()>Calculate</button><br><p id='result'></p>"
+  }
+  function area_S()
+  {
+      var s = parseInt(document.getElementById('side').value);
+      var area = s*s;
+      var text = "Area: "+area;
+      document.getElementById('result').innerHTML = text;
+  }
+  function Hexagon() {
+  var c = document.getElementById("myCanvas");
+  var ctx = c.getContext("2d");
+  ctx.clearRect(0,0,c.width,c.height);
+  ctx.beginPath();
+  ctx.moveTo(150, 25);
+  ctx.lineTo(100, 50);
+  ctx.lineTo(100, 100);
+  ctx.lineTo(150, 125);
+  ctx.lineTo(200, 100);
+  ctx.lineTo(200, 50);
+  ctx.lineTo(150, 25);
+  ctx.stroke();
+  var d = document.getElementById('temp');
+  d.innerHTML = "Side:<input type='text' id='side' placeholder='3'/><br><button type='button' onclick=area_H()>Calculate</button><br><p id='result'></p>"
+  }
+  function area_H()
+  {
+      var s = parseInt(document.getElementById('side').value);
+      var calc = 3 * Math.sqrt(3) * 0.5;
+      var area = calc * s * s;
+      var text = "Area: "+area;
+      document.getElementById('result').innerHTML = text;
+  }
+  </script>
+</body>
+</html>
