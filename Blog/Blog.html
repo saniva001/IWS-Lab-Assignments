@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <HTML>
   <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <TITLE>DOTA-2 Latest Updates</TITLE>
     <STYLE>
     a{
@@ -11,24 +12,11 @@
     body{
       background-color:LightCyan
     }
-    .flex-container {
-    display: -webkit-flex;
-    display: flex;
-    -webkit-flex-flow: row wrap;
-    flex-flow: row wrap;
-    text-align: center;
-    }
-
-    .flex-container > * {
-    padding: 15px;
-    -webkit-flex: 1 100%;
-    flex: 1 100%;
-    }
 
     .article {
+    max-width: 75%;
     text-align:center;
     }
-
     header {background:#333 ;color:white;}
     footer {background:Gray;color:white;}
         .topnav {
@@ -54,10 +42,16 @@
       background-color: #4CAF50;
       color: white;
     }
+    .aside{
+      margin-top: 30px;
+      float: right;
+      background-color: LightCyan;
+      max-width: 25%;
+    }
     @media all and (min-width: 768px) {
     .article {-webkit-flex:5 0px;flex:5 0px;-webkit-order:2;order:2;}
     footer {-webkit-order:3;order:3;}
-    }
+}
     </STYLE>
   <head>
   <body>
@@ -70,6 +64,12 @@
     <a href="#news">News</a>
     <a href="#contact">Contact</a>
     <a href="#about">About</a>
+    </div>
+    <div class="aside">
+    <aside>
+      <a href="https://www.amazon.in/b?ie=UTF8&node=14074947031&pf_rd_p=87ede3cd-9414-4695-bc18-1b85f7e95068&pf_rd_r=ZDMD949MNG8MZ37SV4FX"><img src="img4.jpg" alt="amazon ad" width="300" height="250"></a><br><br><br>
+      <a href="https://www.flipkart.com/ivoomi-me3-teal-blue-16-gb/p/itmexduzp6k4z9mh?pid=MOBEXDYGZHHWTS7Y&srno=b_1_2&otracker=browse&lid=LSTMOBEXDYGZHHWTS7YHPBDUA&fm=organic&iid=83d02dda-0a37-4286-9dbe-c3994dff54ca.MOBEXDYGZHHWTS7Y.SEARCH&ppt=Store%20Browse&ppn=Search%20Page&ssid=xfwtdzz3cw4808841512118986632"><img src="img5.jpg" alt="flipkart ad" width="300" height="250"></a><br>
+    </aside>
     </div>
     <article class="article">
     <H2>7.07 Update - The Dueling Fates</H2>
